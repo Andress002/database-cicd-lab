@@ -1,0 +1,7 @@
+.env
+.env.*
+.vscode/
+.idea/
+
+# Excepciones para plantillas sin secretos
+!.env.example

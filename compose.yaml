@@ -1,0 +1,22 @@
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: database-cicd-sqlserver
+    environment:
+      ACCEPT_EULA: "Y" #Para acceptar la licencia de SQL Server
+      MSSQL_PID: "Developer" #Selecciona Developer, gratuita para desarrollo.
+      MSSQL_SA_PASSWORD: ${MSSQL_SA_PASSWORD}
+    ports:
+      - 1433:1433
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    restart: unless-stopped
+
+
+volumes:
+  sqlserver_data:
+
+
+
+
+#los dos puntos : en yaml indica que estas declarando una propiedad o clave dentro de un mapa

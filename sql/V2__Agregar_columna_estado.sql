@@ -1,0 +1,3 @@
+ALTER TABLE Usuarios
+ADD Estado BIT NOT NULL DEFAULT 1;
+GO
